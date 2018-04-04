@@ -4,12 +4,13 @@
   "description": "E2E automated tests for perspectives.org",
   "main": "index.js",
   "scripts": {
-    "test": "testcafe chrome tests/**/*.js --skip-js-errors"
+    "test": "testcafe chrome:headless tests/**/*.js --skip-js-errors -r xunit:/tmp/test-results/res.xml"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "config": "^1.30.0",
-    "testcafe": "^0.19.1"
+    "testcafe": "^0.19.1",
+    "testcafe-reporter-xunit": "^2.1.0"
   }
 }
