@@ -1,0 +1,15 @@
+{
+  "name": "psp-e2e-tests",
+  "version": "0.0.1",
+  "description": "E2E automated tests for perspectives.org",
+  "main": "index.js",
+  "scripts": {
+    "test": "testcafe chrome index.js -e"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "config": "^1.30.0",
+    "testcafe": "^0.19.1"
+  }
+}
