@@ -4,7 +4,8 @@
   "description": "E2E automated tests for perspectives.org",
   "main": "index.js",
   "scripts": {
-    "test": "testcafe chrome index.js -e"
+    "test": "testcafe chrome tests/**/index.js -e",
+    "acceptance": "testcafe chrome acceptance/**/index.js -e"
   },
   "author": "",
   "license": "ISC",
