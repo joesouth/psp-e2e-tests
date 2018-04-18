@@ -7,7 +7,6 @@ export default class Page {
     this.usernameInput = Selector('input[name="ctl00$ContentPlaceHolder1$userLoginControl$txtUserName"]');
     this.passwordInput = Selector('input[name="ctl00$ContentPlaceHolder1$userLoginControl$txtPassword"]');
     this.submitButton = Selector('input[name="ctl00$ContentPlaceHolder1$userLoginControl$btnSubmit"]');
-    this.errorMsg = Selector('#ctl00_ContentPlaceHolder1_userLoginControl_lblMessage');
   }
   async login(t, username, password) {
     return await t
@@ -16,3 +15,4 @@ export default class Page {
       .click(this.submitButton);
   }
 }
+
