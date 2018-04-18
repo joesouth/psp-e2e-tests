@@ -15,3 +15,4 @@ export default class Page {
       .click(this.submitButton);
   }
 }
+
