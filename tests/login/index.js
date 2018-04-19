@@ -31,4 +31,8 @@ test('Login with email', async t => {
   //Verify username label contains "Email"
   //await t.expect(LoginUserNameLabel.textContent).contains('Email');
   await page.login(t, config.email, config.password);
+  
+  const location = await t.eval(() => window.location);
+  await t.expect(location.pathname).notContains('/Login.aspx');
+
 });
