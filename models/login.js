@@ -19,7 +19,7 @@ export default class Page {
 
   async closeSecurityDialog(t, securityDialogExit){
     return await t
-      .click(this.securityDialogExit);
+      .click(this.securityDialogExit)
       .hover(this.myToolsMenu)
       .wait(10000);
   }
