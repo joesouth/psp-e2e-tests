@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "testcafe chrome tests/**/*.js --skip-js-errors",
+    "login": "testcafe chrome tests/login/index.js --skip-js-errors",
     "test": "testcafe chrome:headless tests/**/*.js --skip-js-errors -r xunit:/tmp/test-results/res.xml"
   },
   "author": "",
