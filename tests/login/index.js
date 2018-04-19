@@ -25,6 +25,10 @@ test('Login with username', async t => {
 });
 
 test('Login with email', async t => {
-  await t.expect(LoginUserNameLabel.textContent).eql('Username');
-  //await page.login(t, config.email, config.password);
+  //Verify username label contains "Username"
+  await t.expect(LoginUserNameLabel.textContent).contains('Username');
+
+  //Verify username label contains "Email"
+  await t.expect(LoginUserNameLabel.textContent).contains('Email');
+  await page.login(t, config.email, config.password);
 });
