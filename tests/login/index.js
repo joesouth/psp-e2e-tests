@@ -16,7 +16,7 @@ test.page(config.baseUrl)('Login button should exist and redirect to /Login.aspx
 });
 
 // default login method
-test.page(config.baseUrl+"/Login.aspx")('Login with username', async t => {
+test.page(`${config.baseUrl}/Login.aspx`)('Login with username', async t => {
   await page.login(t, config.username, config.password);
 
   const location = await t.eval(() => window.location);
@@ -26,6 +26,6 @@ test.page(config.baseUrl+"/Login.aspx")('Login with username', async t => {
 
 fixture(`Security Dialog Close`).page(`${config.baseUrl}`);
 
-test.page(config.baseUrl)('Check/Close Security Dialog', async t => {
+test.page(`${config.baseUrl}`)('Check/Close Security Dialog', async t => {
   await page.closeSecurityDialog(t, securityDialogExit);
 });
