@@ -15,14 +15,13 @@ export default class Page {
       .typeText(this.usernameInput, username)
       .typeText(this.passwordInput, password)
       .click(this.submitButton)
-      .click(this.securityDialogExit)
-      .hover(this.myToolsMenu)
-      .wait(10000);
   }
 
   async closeSecurityDialog(t, securityDialogExit){
     return await t
       .click(this.securityDialogExit);
+      .hover(this.myToolsMenu)
+      .wait(10000);
   }
 }
 
