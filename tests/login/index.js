@@ -16,7 +16,7 @@ test.page(config.baseUrl)('Login button should exist and redirect to /Login.aspx
 });
 
 // default login method
-test.page(config.baseUrl)('Login with username', async t => {
+test.page(config.baseUrl+"/Login.aspx")('Login with username', async t => {
   await page.login(t, config.username, config.password);
 
   const location = await t.eval(() => window.location);
