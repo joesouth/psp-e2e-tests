@@ -5,6 +5,7 @@ import LoginPage from '../../models/login';
 fixture(`Login tests`).page(`${config.baseUrl}/Login.aspx`);
 
 const page = new LoginPage();
+const LoginUserNameLabel = Selector('#ctl00_ContentPlaceHolder1_userLoginControl_lblLoginName');
 const LoginButton = Selector('#ctl00_lnkSign');
 
 test.page(config.baseUrl)('Login button should exist and redirect to /Login.aspx when clicked', async t => {
@@ -23,8 +24,7 @@ test('Login with username', async t => {
   await t.expect(location.pathname).notContains('/Login.aspx');
 });
 
-test('Close Security Dialog', async t => {
-  await page.login(t, config.username, config.password);
-  await page.closeSecurityDialog(t, securityDialogExit);
-
+test('Login with email', async t => {
+  await t.expect(LoginUserNameLabel.textContent).eql('Username');
+  //await page.login(t, config.email, config.password);
 });
