@@ -16,14 +16,15 @@ test.page(config.baseUrl)('Login button should exist and redirect to /Login.aspx
 });
 
 // default login method
-test.page(`${config.baseUrl}/Login.aspx`)('Login with username', async t => {
+test('Login with username', async t => {
   await page.login(t, config.username, config.password);
 
   const location = await t.eval(() => window.location);
   await t.expect(location.pathname).notContains('/Login.aspx');
 });
 
-test.page(config.baseUrl)('Close Security Dialog', async t => {
+test('Close Security Dialog', async t => {
+  await page.login(t, config.username, config.password);
   await page.closeSecurityDialog(t, securityDialogExit);
 
 });
