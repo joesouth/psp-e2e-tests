@@ -23,9 +23,7 @@ test.page(`${config.baseUrl}/Login.aspx`)('Login with username', async t => {
   await t.expect(location.pathname).notContains('/Login.aspx');
 });
 
-
-fixture(`Security Dialog Close`).page(`${config.baseUrl}`);
-
-test.page(`${config.baseUrl}`)('Check/Close Security Dialog', async t => {
+test.page(config.baseUrl)('Close Security Dialog', async t => {
   await page.closeSecurityDialog(t, securityDialogExit);
+
 });
