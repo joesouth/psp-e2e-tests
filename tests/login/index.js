@@ -2,7 +2,7 @@ import config from 'config';
 import { Selector } from 'testcafe';
 import LoginPage from '../../models/login';
 
-//fixture(`Login tests`).page(`${config.baseUrl}/Login.aspx`);
+fixture(`Login tests`).page(`${config.baseUrl}/Login.aspx`);
 
 const page = new LoginPage();
 const LoginButton = Selector('#ctl00_lnkSign');
@@ -22,6 +22,9 @@ test.page(config.baseUrl+"/Login.aspx")('Login with username', async t => {
   const location = await t.eval(() => window.location);
   await t.expect(location.pathname).notContains('/Login.aspx');
 });
+
+
+fixture(`Security Dialog Close`).page(`${config.baseUrl}`);
 
 test.page(config.baseUrl)('Check/Close Security Dialog', async t => {
   await page.closeSecurityDialog(t, securityDialogExit);
