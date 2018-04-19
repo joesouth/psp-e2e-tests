@@ -8,6 +8,10 @@ export default class Page {
     this.passwordInput = Selector('input[name="ctl00$ContentPlaceHolder1$userLoginControl$txtPassword"]');
     this.submitButton = Selector('input[name="ctl00$ContentPlaceHolder1$userLoginControl$btnSubmit"]');
     this.securityDialogExit = Selector('div[aria-labelledby="ui-dialog-title-EnableSecurity"] .ui-dialog-titlebar a');
+    this.myToolsMenu = Selector('a[title="Advanced Tools"][class*="MyTools-Nav-Level1"]');
+
+    MyTools-Nav-Level1 
+    
   }
   async login(t, username, password) {
     return await t
@@ -15,6 +19,7 @@ export default class Page {
       .typeText(this.passwordInput, password)
       .click(this.submitButton)
       .click(this.securityDialogExit)
+      .hover(this.myToolsMenu)
       .wait(10000);
   }
 
