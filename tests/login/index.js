@@ -2,7 +2,7 @@ import config from 'config';
 import { Selector } from 'testcafe';
 import LoginPage from '../../models/login';
 
-fixture(`Login tests`).page(`${config.baseUrl}/Login.aspx`);
+//fixture(`Login tests`).page(`${config.baseUrl}/Login.aspx`);
 
 const page = new LoginPage();
 const LoginButton = Selector('#ctl00_lnkSign');
