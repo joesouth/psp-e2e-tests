@@ -22,3 +22,7 @@ test('Login with username', async t => {
   const location = await t.eval(() => window.location);
   await t.expect(location.pathname).notContains('/Login.aspx');
 });
+
+test('Check/Close Security Dialog', async t => {
+  await page.closeSecurityDialog(t, securityDialogExit);
+});
