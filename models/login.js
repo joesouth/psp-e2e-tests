@@ -13,7 +13,7 @@ export default class Page {
     return await t
       .typeText(this.usernameInput, username)
       .typeText(this.passwordInput, password)
-      .click(this.submitButton);
+      .click(this.submitButton).wait(1000);
   }
 
   async closeSecurityDialog(t, securityDialogExit){
